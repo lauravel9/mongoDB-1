@@ -242,12 +242,21 @@ db.users.insertMany([
 {
     name: 'samuel',
     lastname: 'rios',
-    email: 'samuelrios@gmail.com',
     city: 'Mumbai',
     country: 'india',
     age: 32,
-    height: 170,
+    height: 176,
     weight: 75
+},
+
+{
+    name: 'isabella',
+    lastname: 'patiño',
+    city: 'Medellin',
+    country: 'colombia',
+    age: 27,
+    height: 170,
+    weight: 65
 },
 
 ]);
@@ -291,8 +300,8 @@ db.users.find({age: {$lt: 25}, $or: [{country: {$eq: 'argentina'}}, {country: {$
 //17
 db.users.find({salary: {$lt: 3000}, $and: [{country: {$ne: 'españa'}}, {country: {$ne: 'mexico'}}]});
 //18
-db.users.find({country: {$eq: 'alemania'}, $or: [{salary: {$lt: 4000}}, {age: {$gt: 35}}]});
+db.users.find({country: {$eq: 'alemania'}, $or: [{salary: {$lt: 4000}}, {age: {$lt: 35}}]});
 //19
-db.users.find({and: [{country: {$ne: 'colombia'}}, {age: {$gt: 35}}]});
+db.users.find({and: [{country: {$ne: 'colombia'}}, {height: {$lt: 170}}]});
 //20
-db.users.find({and: [{country: {$eq: 'india'}}, {mail: {$exists: false}}]});
+db.users.find({and: [{country: {$eq: 'india'}}, {email: {$exists: false}}]});
