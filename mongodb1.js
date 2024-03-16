@@ -255,7 +255,7 @@ db.users.insertMany([
     city: 'Medellin',
     country: 'colombia',
     age: 27,
-    height: 170,
+    height: 168,
     weight: 65
 },
 
@@ -302,6 +302,6 @@ db.users.find({salary: {$lt: 3000}, $and: [{country: {$ne: 'españa'}}, {country
 //18
 db.users.find({country: {$eq: 'alemania'}, $or: [{salary: {$lt: 4000}}, {age: {$lt: 35}}]});
 //19
-db.users.find({and: [{country: {$ne: 'colombia'}}, {height: {$lt: 170}}]});
+db.users.find({$and: [{country: {$ne: 'colombia'}}, {height: {$lt: 170}}]});
 //20
-db.users.find({and: [{country: {$eq: 'india'}}, {email: {$exists: false}}]});
+db.users.find({$and: [{country: {$eq: 'india'}}, {email: {$exists: false}}]});
